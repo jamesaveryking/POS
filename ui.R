@@ -63,9 +63,14 @@ ui <- fluidPage(
                  "Total Revenue Based on Sales:", 
                  tags$br(),
                  textOutput("revenueField"))
-               )
+               ),
+              tags$br(),
+              tags$div(
+                "Total Items Purchased:", 
+                tags$br(),
+                textOutput("itemsOrderedField"))
+              )
       )
     )
     
   )
-)

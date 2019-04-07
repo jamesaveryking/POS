@@ -21,6 +21,7 @@ server <- function(input, output) {
                        quote = input$quote)
         
         output$revenueField<-renderText(sum(df$SALES))
+        output$itemsOrderedField<-renderText(calculateItemsOrdered(df))
       },
       error = function(e) {
         # return a safeError if a parsing error occurs
@@ -38,5 +39,9 @@ server <- function(input, output) {
     
   })
   
+  calculateItemsOrdered<-function(inputFile)
+  {
+    return(sum(inputFile$QUANTITYORDERED))
+  }
   
 }
